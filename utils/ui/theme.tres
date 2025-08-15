@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://dlhjs711gdj4f"]
+
+[ext_resource type="FontFile" uid="uid://bdrfyb1spy8jd" path="res://fonts/Nunito-Bold.ttf" id="1_62rhk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_62rhk"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yyu7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyu7o"]
+bg_color = Color(0.973535, 0.973535, 0.973535, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 5.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_62rhk"]
+bg_color = Color(0.973535, 0.973535, 0.973535, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 5.5)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xmh76"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u31b2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q7xhm"]
+
+[resource]
+default_font = ExtResource("1_62rhk")
+default_font_size = 22
+LineEdit/colors/caret_color = Color(0.01, 0.01, 0.01, 0)
+LineEdit/colors/font_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+LineEdit/colors/font_placeholder_color = Color(0.04, 0.04, 0.04, 0.537255)
+LineEdit/constants/caret_width = 2
+LineEdit/font_sizes/font_size = 36
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_62rhk")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_yyu7o")
+LineEdit/styles/read_only = null
+Panel/styles/panel = SubResource("StyleBoxFlat_yyu7o")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_62rhk")
+RichTextLabel/colors/default_color = Color(0.0430384, 0.0430396, 0.0430384, 1)
+RichTextLabel/constants/shadow_offset_x = 0
+RichTextLabel/constants/shadow_offset_y = 0
+RichTextLabel/font_sizes/normal_font_size = 48
+TextEdit/colors/font_color = Color(0.0431373, 0.0431373, 0.0431373, 1)
+TextEdit/colors/font_placeholder_color = Color(0.0392157, 0.0392157, 0.0392157, 0.537255)
+TextEdit/font_sizes/font_size = 36
+TextEdit/styles/focus = SubResource("StyleBoxEmpty_xmh76")
+TextEdit/styles/normal = SubResource("StyleBoxEmpty_u31b2")
+TextEdit/styles/read_only = SubResource("StyleBoxEmpty_q7xhm")

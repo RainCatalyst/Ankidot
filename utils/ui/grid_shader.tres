@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ds3xpk4pkrq43"]
+
+[ext_resource type="Shader" uid="uid://c5h7vfnchhl61" path="res://materials/grid_shader.gdshader" id="1_k0ogn"]
+
+[resource]
+shader = ExtResource("1_k0ogn")
+shader_parameter/freq = 8.0
+shader_parameter/ratio = 1.8
+shader_parameter/alpha = 1.0
+shader_parameter/grid_color = Color(0, 0, 0, 0.160784)
+shader_parameter/thickness = 1.0

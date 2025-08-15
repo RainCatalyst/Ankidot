@@ -1,0 +1,42 @@
+[gd_scene load_steps=2 format=3 uid="uid://qml8bvda6qra"]
+
+[ext_resource type="Script" uid="uid://fc1q5kf0b52c" path="res://anki/anki_api.gd" id="1_s2yw2"]
+
+[node name="AnkiAPI" type="Node" node_paths=PackedStringArray("debug_label")]
+script = ExtResource("1_s2yw2")
+debug_label = NodePath("CanvasLayer/Panel/MarginContainer/Control/Label")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+timeout = 0.5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 335.0
+offset_bottom = 160.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 12
+
+[node name="Control" type="Control" parent="CanvasLayer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/Panel/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Debug Info"

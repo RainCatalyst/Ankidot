@@ -1,0 +1,159 @@
+[gd_scene load_steps=16 format=3 uid="uid://dppqqqti4picd"]
+
+[ext_resource type="Script" uid="uid://cneowbojal11j" path="res://game/game.gd" id="1_l1rk1"]
+[ext_resource type="Theme" uid="uid://dlhjs711gdj4f" path="res://utils/theme.tres" id="1_vasa2"]
+[ext_resource type="Material" uid="uid://bnwx6gdaefi07" path="res://utils/ui/bubbles.tres" id="3_4fuuu"]
+[ext_resource type="Script" uid="uid://0k57tm30dp5w" path="res://game/states/gs_idle.gd" id="3_dakft"]
+[ext_resource type="PackedScene" uid="uid://dpdnpcb7yqqkj" path="res://output/word_label.tscn" id="3_h7iqs"]
+[ext_resource type="Script" uid="uid://c2rx4jmqda4bt" path="res://game/states/gs_next_word.gd" id="4_u5opy"]
+[ext_resource type="Script" uid="uid://drxj4lfxbanel" path="res://game/states/gs_answer.gd" id="5_3vho3"]
+[ext_resource type="PackedScene" uid="uid://bl8nm1f7n1g1l" path="res://input/input_label.tscn" id="5_dxrkv"]
+[ext_resource type="Script" uid="uid://125rx2lnck6i" path="res://game/states/gs_input.gd" id="5_y36n6"]
+[ext_resource type="Script" uid="uid://fqrk2sjw3ogd" path="res://game/background.gd" id="7_l8g03"]
+[ext_resource type="Script" uid="uid://btjdetafoxbog" path="res://game/states/gs_error.gd" id="7_vsp63"]
+[ext_resource type="Texture2D" uid="uid://oyv2sr10t3sk" path="res://utils/ui/circle.png" id="8_3vho3"]
+[ext_resource type="PackedScene" uid="uid://djopyjgfsqhqo" path="res://mistakes/mistake_bar.tscn" id="12_qf6n1"]
+
+[sub_resource type="Curve" id="Curve_146p7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.467803, 0), -5.73697, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_j8tme"]
+_data = [Vector2(0, 0), 0.0, 16.4498, 0, 0, Vector2(0.147727, 1), 0.0, 0.0, 0, 0, Vector2(0.467803, 0), -5.73697, 0.0, 0, 0]
+point_count = 3
+
+[node name="Game" type="Control" node_paths=PackedStringArray("word_label", "input_label", "background", "mistake_bar", "ui_pivot")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vasa2")
+script = ExtResource("1_l1rk1")
+word_label = NodePath("UI/WordLabel")
+input_label = NodePath("UI/InputLabel")
+background = NodePath("BG")
+mistake_bar = NodePath("UI/MistakeBar")
+ui_pivot = NodePath(".")
+
+[node name="States" type="Node" parent="."]
+
+[node name="idle" type="Node" parent="States"]
+script = ExtResource("3_dakft")
+
+[node name="next_word" type="Node" parent="States"]
+script = ExtResource("4_u5opy")
+
+[node name="answer" type="Node" parent="States"]
+script = ExtResource("5_3vho3")
+
+[node name="input" type="Node" parent="States"]
+script = ExtResource("5_y36n6")
+
+[node name="error" type="Node" parent="States"]
+script = ExtResource("7_vsp63")
+
+[node name="BG" type="ColorRect" parent="." node_paths=PackedStringArray("sparks", "sparks_bad")]
+material = ExtResource("3_4fuuu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -87.0
+offset_top = -52.0
+offset_right = 90.0
+offset_bottom = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.97, 0.88561, 0.6887, 1)
+script = ExtResource("7_l8g03")
+wave_a_good = Color(0.909804, 0.968627, 0.737255, 1)
+wave_b_good = Color(0.862745, 0.968627, 0.545098, 1)
+wave_a_bad = Color(0.97, 0.78764, 0.7372, 1)
+wave_b_bad = Color(0.97, 0.6499, 0.5432, 1)
+sparks = NodePath("Sparks")
+sparks_bad = NodePath("SparksBad")
+
+[node name="Sparks" type="CPUParticles2D" parent="BG"]
+position = Vector2(585, 698)
+emitting = false
+amount = 96
+texture = ExtResource("8_3vho3")
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.95
+lifetime_randomness = 0.75
+emission_shape = 3
+emission_rect_extents = Vector2(600, 10)
+direction = Vector2(0, -1)
+spread = 10.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 400.0
+initial_velocity_max = 1400.0
+damping_min = 325.0
+damping_max = 325.0
+scale_amount_min = 2.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_146p7")
+color = Color(0.95158, 0.95158, 0.95158, 1)
+
+[node name="SparksBad" type="CPUParticles2D" parent="BG"]
+position = Vector2(589, 360)
+emitting = false
+amount = 96
+texture = ExtResource("8_3vho3")
+lifetime = 0.8
+one_shot = true
+explosiveness = 0.95
+lifetime_randomness = 0.75
+emission_shape = 3
+emission_rect_extents = Vector2(600, 600)
+direction = Vector2(0, 1)
+spread = 93.17
+gravity = Vector2(0, 0)
+initial_velocity_min = 500.0
+initial_velocity_max = 500.0
+damping_min = 400.0
+damping_max = 400.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_j8tme")
+color = Color(0.0383974, 0.0383971, 0.0383969, 1)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WordLabel" parent="UI" instance=ExtResource("3_h7iqs")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -302.0
+offset_top = 114.0
+offset_right = 303.0
+offset_bottom = 237.0
+grow_horizontal = 2
+
+[node name="InputLabel" parent="UI" instance=ExtResource("5_dxrkv")]
+layout_mode = 1
+offset_top = -250.0
+offset_bottom = -170.0
+
+[node name="MistakeBar" parent="UI" instance=ExtResource("12_qf6n1")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -171.5
+offset_top = -129.0
+offset_right = 171.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0

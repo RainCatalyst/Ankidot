@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl8nm1f7n1g1l"]
+
+[ext_resource type="Script" uid="uid://c3qewmcviacso" path="res://input/input_label.gd" id="1_1qgsi"]
+[ext_resource type="PackedScene" uid="uid://bunkdqai8chq6" path="res://input/input_sparks.tscn" id="2_3ommx"]
+
+[node name="InputLabel" type="Control" node_paths=PackedStringArray("label", "caret")]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -216.0
+offset_right = 200.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_1qgsi")
+label = NodePath("RichTextLabel")
+caret = NodePath("Caret")
+sparks = ExtResource("2_3ommx")
+color_correct = Color(0.831575, 0.95878, 0.825923, 1)
+color_wrong = Color(1, 0.768627, 0.701961, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Caret" type="Panel" parent="."]
+visible = false
+modulate = Color(0.07, 0.07, 0.07, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -2.0
+offset_top = -20.0
+offset_right = 2.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2

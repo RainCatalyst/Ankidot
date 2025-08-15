@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://djopyjgfsqhqo"]
+
+[ext_resource type="Script" uid="uid://c4b00wt44gik3" path="res://mistakes/mistake_bar.gd" id="1_ikvtc"]
+[ext_resource type="PackedScene" uid="uid://cx4axdm7vjqp2" path="res://mistakes/mistake_box.tscn" id="2_qoylx"]
+
+[node name="MistakeBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 531.0
+offset_bottom = 163.0
+script = ExtResource("1_ikvtc")
+mistake_box = ExtResource("2_qoylx")

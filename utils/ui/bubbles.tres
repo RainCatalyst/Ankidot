@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bnwx6gdaefi07"]
+
+[ext_resource type="Shader" uid="uid://c324s0odn4n3h" path="res://utils/ui/bubbles.gdshader" id="1_rj87y"]
+
+[resource]
+shader = ExtResource("1_rj87y")
+shader_parameter/color = Color(0.97, 0.827087, 0.4656, 1)
+shader_parameter/wave_color_a = Color(0.90792, 0.97, 0.7372, 1)
+shader_parameter/wave_color_b = Color(0.8633, 0.97, 0.5432, 1)
+shader_parameter/ratio = 0.6
+shader_parameter/resolution = 20.0
+shader_parameter/radius = 0.88
+shader_parameter/wave = 0.8
+shader_parameter/wave_amount = -0.025
+shader_parameter/speed = -0.015

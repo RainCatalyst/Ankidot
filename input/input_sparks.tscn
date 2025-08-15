@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bunkdqai8chq6"]
+
+[ext_resource type="Texture2D" uid="uid://oyv2sr10t3sk" path="res://utils/ui/circle.png" id="1_t20ns"]
+[ext_resource type="Script" uid="uid://c8vlxqplte0ci" path="res://utils/particle_autodestroy.gd" id="2_nbblq"]
+
+[sub_resource type="Curve" id="Curve_146p7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.467803, 0), -5.73697, 0.0, 0, 0]
+point_count = 2
+
+[node name="Sparks" type="CPUParticles2D"]
+emitting = false
+amount = 5
+texture = ExtResource("1_t20ns")
+lifetime = 0.3
+one_shot = true
+explosiveness = 0.8
+emission_shape = 3
+emission_rect_extents = Vector2(1, 2)
+spread = 75.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 350.0
+initial_velocity_max = 450.0
+damping_min = 2000.0
+damping_max = 2000.0
+scale_amount_min = 0.1
+scale_amount_max = 0.25
+scale_amount_curve = SubResource("Curve_146p7")
+color = Color(0.0475577, 0.0475576, 0.0475576, 1)
+script = ExtResource("2_nbblq")

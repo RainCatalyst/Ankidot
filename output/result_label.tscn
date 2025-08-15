@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://67p2xl8a1xb"]
+
+[ext_resource type="PackedScene" uid="uid://dpdnpcb7yqqkj" path="res://output/word_label.tscn" id="1_p4j1d"]
+[ext_resource type="Script" uid="uid://cxyiiwbl0p0mc" path="res://output/result_label.gd" id="2_07708"]
+
+[node name="ResultLabel" instance=ExtResource("1_p4j1d")]
+script = ExtResource("2_07708")
+colors = Array[Color]([Color(0.921569, 0.129412, 0.203922, 1), Color(0.952941, 0.776471, 0, 1), Color(0.227451, 0.67451, 0, 1), Color(0, 0.643137, 0.784314, 1)])
+labels = Array[String](["Again", "Hard", "Good", "Easy"])
+
+[node name="RichTextLabel" parent="." index="1"]
+theme_override_font_sizes/normal_font_size = 16

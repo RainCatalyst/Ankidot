@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl8nm1f7n1g1l"]
+
+[ext_resource type="Script" uid="uid://c3qewmcviacso" path="res://input/input_label.gd" id="1_1qgsi"]
+
+[node name="InputLabel" type="Control" node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -216.0
+offset_right = 200.0
+offset_bottom = -136.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_1qgsi")
+label = NodePath("RichTextLabel")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+bbcode_enabled = true
+text = "Hello"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1

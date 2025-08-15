@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://dppqqqti4picd"]
+
+[ext_resource type="Script" uid="uid://cneowbojal11j" path="res://game/game.gd" id="1_l1rk1"]
+[ext_resource type="Theme" uid="uid://dlhjs711gdj4f" path="res://utils/theme.tres" id="1_vasa2"]
+[ext_resource type="Material" uid="uid://bnwx6gdaefi07" path="res://utils/ui/bubbles.tres" id="3_4fuuu"]
+[ext_resource type="PackedScene" uid="uid://dpdnpcb7yqqkj" path="res://output/word_label.tscn" id="3_h7iqs"]
+
+[node name="Game" type="Control" node_paths=PackedStringArray("label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vasa2")
+script = ExtResource("1_l1rk1")
+label = NodePath("WordLabel")
+
+[node name="BG" type="ColorRect" parent="."]
+material = ExtResource("3_4fuuu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.97, 0.88561, 0.6887, 1)
+
+[node name="WordLabel" parent="." instance=ExtResource("3_h7iqs")]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -302.5
+offset_top = 122.0
+offset_right = 302.5
+offset_bottom = 245.0
+grow_horizontal = 2

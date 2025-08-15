@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx4axdm7vjqp2"]
+
+[ext_resource type="Script" uid="uid://b7ukchxo2gpqb" path="res://mistakes/mistake_box.gd" id="1_vmgux"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ikvtc"]
+bg_color = Color(0, 0, 0, 0.117647)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+shadow_offset = Vector2(0, 5.5)
+
+[node name="MistakeBox" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 32.0
+offset_bottom = 32.0
+pivot_offset = Vector2(16, 16)
+script = ExtResource("1_vmgux")
+
+[node name="PanelContainer2" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ikvtc")
+
+[node name="PanelContainer" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
